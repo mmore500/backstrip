@@ -57,11 +57,19 @@ def backstrip(
     -------
     None
     """
+    if ax is None:
+        ax = plt.gca()
+
     box_patches = [
         child
         for child in ax.get_children()
         if isinstance(child, mpl_patches.PathPatch)
     ]
+    box_patches.sort(
+        key=lambda patch: get_bbox_generic(patch).bounds[
+            {"v": 0, "h": 1}[orient]
+        ],
+    )
     ax_width, ax_height = np.ptp(ax.get_xlim()), np.ptp(ax.get_ylim())
     ax_x0, ax_y0 = ax.get_xlim()[0], ax.get_ylim()[0]
 
