@@ -34,7 +34,7 @@ jobs:
         else
           python -m pip install -r requirements.txt
         fi
-    - name: Run smoke tests
+    - name: Run tests
       run: ./test.sh
 
   lint:
