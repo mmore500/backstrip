@@ -14,7 +14,7 @@ def backstrip(
     hue: typing.Optional[typing.Iterable[str]] = None,
     hatch: typing.Optional[typing.Iterable[str]] = None,
     hatch_color: typing.Union[str, typing.Iterable[str]] = "white",
-    orient: str = "v",
+    orient: typing.Literal["v", "h"] = "v",
     **kwargs,
 ) -> None:
     """Draws background strips behind boxplot patches on a matplotlib Axes
@@ -45,8 +45,10 @@ def backstrip(
         hatch patterns are applied.
     hatch_color : Union[str, Iterable[str]], default 'white'
         The color of hatch patterns, if applied.
-    orient : str, default 'v'
-        The orientation of the backstrips. Can be 'v' for vertical or 'h' for
+    orient : Literal['v', 'h'], default 'v'
+        The orientation of the backstrips.
+
+        Should match orientation of boxplot. Can be 'v' for vertical or 'h' for
         horizontal.
     kwargs : dict
         Additional keyword arguments to pass to the `Rectangle` patches.
