@@ -9,7 +9,7 @@ from ._get_bbox_generic import get_bbox_generic
 
 
 def backstrip(
-    ax: plt.Axes,
+    ax: typing.Optional[plt.Axes] = None,
     alpha: float = 0.5,
     hue: typing.Optional[typing.Iterable[str]] = None,
     hatch: typing.Optional[typing.Iterable[str]] = None,
