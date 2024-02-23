@@ -24,8 +24,8 @@ from matplotlib import pyplot as plt
 import seaborn as sns
 
 titanic = sns.load_dataset("titanic")
-ax = sns.boxplot(data=titanic, x="class", y="age", hue="alive")
-backstrip(ax)
+ax = sns.boxplot(data=titanic, x="age", y="class", hue="alive", orient="h")
+backstrip(ax, hatch=["oo", "xx"], orient="h")
 
 plt.show()
 ```
