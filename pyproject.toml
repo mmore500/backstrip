@@ -1,6 +1,6 @@
 [project]
 name = "backstrip"
-version = "0.2.3"
+version = "0.2.4"
 description = "backstrip adds color-coordinated fill behind matplotlib boxplots."
 authors = [
     { name = "Matthew Andres Moreno", email = "m.more500@gmail.com" },
