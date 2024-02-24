@@ -1,0 +1,13 @@
+cff-version: 1.1.0
+message: "If you use this software, please cite it as below."
+title: 'backstrip: a Python library to enhance categorical distribution plots'
+abstract: "backstrip adds color-coordinated fill behind matplotlib boxplots."
+authors:
+- family-names: Moreno
+  given-names: Matthew Andres
+  orcid: 0000-0003-4726-4479
+date-released: 2024-02-24
+doi: 10.5281/zenodo.10701180
+license: MIT
+repository-code: https://github.com/mmore500/backstrip
+url: "https://github.com/mmore500/backstrip"
