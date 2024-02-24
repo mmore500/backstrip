@@ -255,7 +255,7 @@ def _apply_backstrip(
 
     keys = [var for var in [x, y, hue] if var is not None]
     groups = data.groupby(keys) if keys else [(None, data)]
-    lookup = dict(tup for tup in groups)  # unpack prevents TypeError
+    lookup = {k if isinstance(k, tuple) else (k,): v for k, v in groups}
 
     if style is not None:
         hatch_styles = []
@@ -264,7 +264,7 @@ def _apply_backstrip(
                 *(var for var in [order, hue_order] if var is not None),
             )
             if keys
-            else [None]
+            else [(None,)]
         ):
             try:
                 group = lookup[key]

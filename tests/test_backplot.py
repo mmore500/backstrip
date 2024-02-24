@@ -63,7 +63,7 @@ def test_backplot_h():
     plt.savefig("/tmp/test_backplot_h.png")
 
 
-def test_backplot_v_nox():
+def test_backplot_v_nox1():
     plt.clf()
     # adapted from https://seaborn.pydata.org/generated/seaborn.boxplot.html
     titanic = sns.load_dataset("titanic")
@@ -74,7 +74,37 @@ def test_backplot_v_nox():
         orient="v",
     )
 
-    plt.savefig("/tmp/test_backplot_v_nox.png")
+    plt.savefig("/tmp/test_backplot_v_nox1.png")
+
+
+def test_backplot_v_nox2():
+    plt.clf()
+    # adapted from https://seaborn.pydata.org/generated/seaborn.boxplot.html
+    titanic = sns.load_dataset("titanic")
+    backplot(
+        data=titanic,
+        y="age",
+        style="alive",
+        orient="v",
+        hue="class",
+    )
+
+    plt.savefig("/tmp/test_backplot_v_no2.png")
+
+
+def test_backplot_v_nox3():
+    plt.clf()
+    # adapted from https://seaborn.pydata.org/generated/seaborn.boxplot.html
+    titanic = sns.load_dataset("titanic")
+    backplot(
+        data=titanic,
+        y="age",
+        style="alive",
+        orient="v",
+        col="class",
+    )
+
+    plt.savefig("/tmp/test_backplot_v_nox3.png")
 
 
 def test_backplot_v_nohue():
@@ -84,7 +114,7 @@ def test_backplot_v_nohue():
     backplot(
         data=titanic,
         y="age",
-        # style="alive",
+        style="alive",
         orient="v",
         x="class",
     )
