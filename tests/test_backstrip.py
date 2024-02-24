@@ -80,3 +80,21 @@ def test_backstrip_seaborn_h():
     backstrip(ax, orient="h")
 
     plt.savefig("/tmp/test_backstrip_seaborn_h.png")
+
+
+def test_backstrip_facetgrid_v():
+    plt.clf()
+    # adapted from https://seaborn.pydata.org/generated/seaborn.boxplot.html
+    titanic = sns.load_dataset("titanic")
+    g = sns.FacetGrid(titanic, margin_titles=True)
+    g.map_dataframe(
+        sns.boxplot,
+        x="class",
+        y="age",
+        hue="alive",
+        palette=sns.color_palette("tab10"),
+    )
+    for ax in g.axes.flat:
+        backstrip(ax)
+
+    plt.savefig("/tmp/test_backstrip_facetgrid_v.png")
