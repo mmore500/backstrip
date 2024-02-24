@@ -40,7 +40,8 @@ def backplot(
     Parameters
     ----------
     data : pd.DataFrame
-        The input dataset, where each row is an observation and each column is a feature.
+        The input dataset, where each row is an observation and each column is
+        a feature.
     x : Optional[str], optional
         The name of the column in `data` to be plotted on the x-axis.
     y : Optional[str], optional
