@@ -6,6 +6,7 @@
 ](https://github.com/mmore500/backstrip/actions)
 [
 ![GitHub stars](https://img.shields.io/github/stars/mmore500/backstrip.svg?style=round-square&logo=github&label=Stars&logoColor=white)](https://github.com/mmore500/backstrip)
+[![DOI](https://zenodo.org/badge/762052562.svg)](https://zenodo.org/doi/10.5281/zenodo.10701180)
 
 *backstrip* adds color-coordinated fill behind matplotlib boxplots
 
@@ -201,3 +202,24 @@ def backplot(
     hatched with both (or all) corresponding hatch patterns.
     """
 ```
+
+## Citing
+
+If backstrip contributes to a scientific publication, please cite it as
+
+> Matthew Andres Moreno. (2024). mmore500/backstrip. Zenodo. https://doi.org/10.5281/zenodo.10701180
+
+```bibtex
+@software{moreno2024backstrip,
+  author = {Matthew Andres Moreno},
+  title = {mmore500/backstrip},
+  month = dec,
+  year = 2024,
+  publisher = {Zenodo},
+  doi = {10.5281/zenodo.10701180},
+  url = {https://doi.org/10.5281/zenodo.10701180}
+}
+```
+
+Consider also citing [matplotlib](https://matplotlib.org/stable/users/project/citing.html) and [seaborn](https://seaborn.pydata.org/citing.html).
+And don't forget to leave a [star on GitHub](https://github.com/mmore500/backstrip/stargazers)!
