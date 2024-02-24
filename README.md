@@ -213,7 +213,7 @@ If backstrip contributes to a scientific publication, please cite it as
 @software{moreno2024backstrip,
   author = {Matthew Andres Moreno},
   title = {mmore500/backstrip},
-  month = dec,
+  month = feb,
   year = 2024,
   publisher = {Zenodo},
   doi = {10.5281/zenodo.10701180},
