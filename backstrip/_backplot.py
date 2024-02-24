@@ -253,24 +253,32 @@ def _apply_backstrip(
         assert x is None
 
     keys = [var for var in [x, y, hue] if var is not None]
-    groups = data.groupby(keys)
+    groups = data.groupby(keys) if keys else [(None, data)]
     lookup = dict(tup for tup in groups)  # unpack prevents TypeError
 
     if style is not None:
         hatch_styles = []
-        for key in it.product(
-            *(var for var in [order, hue_order] if var is not None),
+        for key in (
+            it.product(
+                *(var for var in [order, hue_order] if var is not None),
+            )
+            if keys
+            else [None]
         ):
             try:
                 group = lookup[key]
-                hatch_style = "".join(
-                    hatches[style_order.index(s)]
-                    for s in group[style].unique()
-                    if s is not None and s in style_order
-                )
-                hatch_styles.append(hatch_style)
             except KeyError:
                 continue
+
+            hatch_style = "".join(
+                hatches[style_order.index(s)]
+                for s in group[style].unique()
+                if s is not None and s in style_order
+            )
+            hatch_styles.append(hatch_style)
+
+        if not hatch_styles:
+            hatch_styles = None
     else:
         hatch_styles = None
 
