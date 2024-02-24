@@ -181,10 +181,18 @@ def backplot(
 
         figwidth = g.figure.get_figwidth()
         figfrac = max(0.33, (figwidth - legend_width_inches) / figwidth)
-        sns.move_legend(
-            g,
-            title=None,
+
+        # can't use move_legend to add handles/labels
+        # see https://github.com/mwaskom/seaborn/pull/3454
+        g._legend.set_visible(False)
+        g._legend = plt.legend(
             handles=legend_patches,
+            labels=[patch.get_label() for patch in legend_patches],
+            frameon=False,
+        )
+        sns.move_legend(
+            obj=g,
+            title=None,
             **{
                 "loc": "center left",
                 "bbox_to_anchor": (figfrac, 0.5),
