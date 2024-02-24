@@ -135,7 +135,7 @@ def backplot(
         **{
             "kind": "box",
             "legend_out": True,
-            "palette": sns.color_palette("tab10"),
+            **({"palette": palette} if hue is not None else {}),
             **kwargs,
         },
     )
@@ -341,9 +341,9 @@ def _make_legend_patches(
             hatch=hatch,
         )
         for label, color, hatch in zip(
-            labels,
-            opyt.or_value(palette, it.cycle(["none"])),
-            opyt.or_value(hatch_styles, it.cycle([None])),
+            opyt.or_value(labels, tuple()),
+            opyt.or_value(palette, it.repeat("none")),
+            opyt.or_value(hatch_styles, it.repeat(None)),
         )
     )
     if palette is not None:

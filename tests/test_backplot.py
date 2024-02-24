@@ -76,3 +76,19 @@ def test_backplot_v_nox():
     )
 
     plt.savefig("/tmp/test_backplot_v_nox.png")
+
+
+def test_backplot_v_nohue():
+    plt.clf()
+    # adapted from https://seaborn.pydata.org/generated/seaborn.boxplot.html
+    titanic = sns.load_dataset("titanic")
+    titanic["foo"] = "bar"
+    backplot(
+        data=titanic,
+        y="age",
+        # style="alive",
+        orient="v",
+        x="class",
+    )
+
+    plt.savefig("/tmp/test_backplot_v_nohue.png")
