@@ -20,8 +20,12 @@ classifiers = [
 requires-python = ">=3.8"
 license = {text = "MIT license"}
 dependencies = [
+  "frozendict",
   "matplotlib",
   "numpy",
+  "opytional",
+  "pandas",
+  "seaborn",
 ]
 
 [project.readme]

@@ -6,6 +6,10 @@ __version__ = "0.1.0"
 __maintainer__ = "Matthew Andres Moreno"
 __email__ = "m.more500@gmail.com"
 
+from ._backplot import backplot
 from ._backstrip import backstrip
 
-__all__ = ["backstrip"]
+__all__ = [
+    "backplot",
+    "backstrip",
+]

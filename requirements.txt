@@ -20,6 +20,8 @@ cycler==0.12.1
     # via matplotlib
 fonttools==4.49.0
     # via matplotlib
+frozendict==2.4.0
+    # via backstrip (pyproject.toml)
 importlib-metadata==7.0.1
     # via build
 iniconfig==2.0.0
@@ -40,13 +42,17 @@ numpy==1.24.4
     #   matplotlib
     #   pandas
     #   seaborn
+opytional==0.1.0
+    # via backstrip (pyproject.toml)
 packaging==23.2
     # via
     #   build
     #   matplotlib
     #   pytest
 pandas==2.0.3
-    # via seaborn
+    # via
+    #   backstrip (pyproject.toml)
+    #   seaborn
 pathspec==0.12.1
     # via black
 pillow==10.2.0
