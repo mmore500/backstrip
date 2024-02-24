@@ -12,6 +12,7 @@
 
 - Free software: MIT license
 - Repository: <https://github.com/mmore500/backstrip>
+- Documentation: <https://github.com/mmore500/backstrip/blob/master/README.md>
 
 ## Install
 
