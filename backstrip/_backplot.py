@@ -119,7 +119,8 @@ def backplot(
         hatches = [*it.islice(hatch_cycle, len(style_order))]
 
     if palette is None:
-        palette = sns.color_palette("tab10")
+        # silence seaborn warning about palette length
+        palette = sns.color_palette("tab10")[: len(hue_order or [])]
 
     # PART 2: draw boxplots
     ###########################################################################
@@ -254,6 +255,8 @@ def _apply_backstrip(
         assert x is None
 
     keys = [var for var in [x, y, hue] if var is not None]
+    if len(keys) == 1:
+        keys = keys[0]  # silence pandas warning about single-item tuple
     groups = data.groupby(keys) if keys else [(None, data)]
     lookup = {k if isinstance(k, tuple) else (k,): v for k, v in groups}
 

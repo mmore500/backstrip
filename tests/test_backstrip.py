@@ -92,7 +92,7 @@ def test_backstrip_facetgrid_v():
         x="class",
         y="age",
         hue="alive",
-        palette=sns.color_palette("tab10"),
+        palette=sns.color_palette("tab10")[:2],
     )
     for ax in g.axes.flat:
         backstrip(ax)
