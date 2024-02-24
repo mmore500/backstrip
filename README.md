@@ -57,6 +57,8 @@ plt.show()
 
 ## API
 
+See function docstrings for full parameter and return value descriptions.
+
 ### `backstrip`: direct, axes-level interface
 
 ```python3
@@ -79,36 +81,6 @@ background.
 
 These strips can be customized in color (`hue`), pattern (`hatch`), and
 orientation (`orient`).
-
-Parameters
-----------
-ax : plt.Axes
-    The matplotlib Axes object on which to draw the backstrips.
-  alpha : float, default 0.5
-    The opacity level of the backstrips.
-  hue : Union[None, str, Iterable[str]], optional
-    The color(s) for the backstrips.
-
-    Can be a single color or a sequence of colors. If `None`, the colors of
-    the box objects in the Axes are matched.
-  hatch : Union[None, str, Iterable[str]], default None
-    The hatch pattern(s) for the backstrips.
-
-    Can be a single pattern or a sequence of patterns. If `None`, no
-    hatch patterns are applied.
-  hatch_color : Union[str, Iterable[str]], default 'white'
-    The color of hatch patterns, if applied.
-  orient : Literal['v', 'h'], default 'v'
-    The orientation of the backstrips.
-
-    Should match orientation of boxplot. Can be 'v' for vertical or 'h' for
-    horizontal.
-  kwargs : dict
-    Additional keyword arguments to pass to the `Rectangle` patches.
-
-Returns
--------
-None
 """
 ```
 
@@ -140,62 +112,6 @@ def backplot(
     Provides a tidy-data, seaborn-like interface for backstrip elements. Unlike
     backstrip, this function uses the seaborn.catplot interface to create
     boxplots (and then applies backstrips to the resulting axes).
-
-    Parameters
-    ----------
-    data : pd.DataFrame
-        The input dataset, where each row is an observation and each column is a feature.
-    x : Optional[str], optional
-        The name of the column in `data` to be plotted on the x-axis.
-    y : Optional[str], optional
-        The name of the column in `data` to be plotted on the y-axis.
-    hue : Optional[str], optional
-        The name of the column in `data` to assign boxplot colors.
-
-        Backstrip colors are matched to the boxplot colors.
-    style : Optional[str], optional
-        The name of the column in `data` to assign backstrip hatch patterns.
-    col : Optional[str], optional
-        Variable in `data` for facet wrapping the columns.
-    row : Optional[str], optional
-        Variable in `data` for facet wrapping the rows.
-    order : Optional[Sequence[str]], optional
-        The order to plot the x or y categorical levels in.
-
-        If None, order is assigned arbitrarily.
-    hue_order : Optional[Sequence[str]], optional
-        The order to assign hue levels with palette colors.
-
-        If None, order is assigned arbitrarily.
-    style_order : Optional[Sequence[str]], optional
-        The order to assign style levels with hatch patterns.
-
-        If None, order is assigned arbitrarily.
-    hatches : Optional[Sequence[str]], optional
-        A sequence of hatch patterns to use for the styles.
-
-        If None, an arbitrary sequence of hatch patterns is used.
-    orient : {'v', 'h'}, default 'v'
-        Orientation of the plot (vertical or horizontal).
-    palette : Optional[Union[str, Sequence[str]]], optional
-        Colors to use for the different levels of the `hue` variable.
-
-        If None, the default seaborn color palette is used.
-    backstrip_kws : dict, default dict()
-        Additional keyword arguments for the backstrip function.
-    legend_width_inches : float, default 1.5
-        The width of the legend in inches.
-
-        Overridden by any passed `legend_kws` options.
-    legend_kws : dict, default dict()
-        Additional keyword arguments for the legend.
-    **kwargs : dict
-        Additional keyword arguments passed to `sns.catplot`.
-
-    Returns
-    -------
-    sns.FacetGrid
-        A FacetGrid object which is the figure-level container for the plots.
 
     Notes
     -----
