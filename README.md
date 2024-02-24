@@ -8,7 +8,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/mmore500/backstrip.svg?style=round-square&logo=github&label=Stars&logoColor=white)](https://github.com/mmore500/backstrip)
 [![DOI](https://zenodo.org/badge/762052562.svg)](https://zenodo.org/doi/10.5281/zenodo.10701180)
 
-*backstrip* adds color-coordinated fill behind matplotlib boxplots
+**_backstrip_** adds color-coordinated fill behind matplotlib boxplots
 
 - Free software: MIT license
 - Repository: <https://github.com/mmore500/backstrip>
