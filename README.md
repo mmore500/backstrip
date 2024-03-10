@@ -73,11 +73,11 @@ def backstrip(
 ) -> None:
     """Draws background strips behind boxplot patches on a matplotlib Axes
     object to enhance the visual identifiability of hue-keyed groups.
-    
+
     This function iterates over PathPatch objects (representing boxes) within a
     matplotlib Axes, and draws semi-transparent rectangles (strips) in the
     background.
-    
+
     These strips can be customized in color (`hue`), pattern (`hatch`), and
     orientation (`orient`).
     """
